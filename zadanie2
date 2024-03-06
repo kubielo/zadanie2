@@ -1,0 +1,36 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    int w = 7;
+    int k = 3;
+    int arr[w][k];
+     for (int i = 0; i < w; i++) {
+        for (int j = 0; j < k; j++) {
+            if (j == 0 || j == k - 1) {
+                arr[i][j] = 1;
+            } else {
+                arr[i][j] = 0;
+            }
+        }
+    }
+     cout << "Tablica:" << endl;
+    for (int i = 0; i < w; i++) {
+        for (int j = 0; j < k; j++) {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    ofstream zapis("wynik.txt");
+
+     for (int i = 0; i < w; i++) {
+            for (int j = 0; j < k; j++) {
+                zapis << arr[i][j] << " ";
+            }
+            zapis << endl;
+        }
+    return 0;
+}
